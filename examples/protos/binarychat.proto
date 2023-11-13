@@ -1,0 +1,33 @@
+// Copyright 2023 explorer.85@mail.ru
+
+
+syntax = "proto3";
+
+
+package binarychat;
+
+import "commontypes.proto";
+
+// The Chat service definition.
+service Chat {
+  //Отправить бинарное сообщение получателю
+  rpc SendMessage (BinaryMessage) returns (stream commontypes.MessageState) {}
+  //подписатся на сообщения
+  rpc SubscribeToMessage(commontypes.Empty) returns (stream BinaryMessage) {}
+
+}
+
+
+// Бинарное сообщение
+message BinaryMessage {
+  string data = 1;
+}
+
+
+
+
+
+
+
+
+

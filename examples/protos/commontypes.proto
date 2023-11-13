@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package commontypes;
+
+message Empty {
+}
+
+
+enum SendingState {
+kSending = 0;
+kSended = 1;
+}
+
+//Состояние отправки сообщения
+message MessageState {
+  SendingState state = 1; //данные сообщения
+}
+
